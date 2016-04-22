@@ -1,1 +1,1 @@
-# ED-SubspaceBurstTransponder
+# ED-SubspaceTransponder
