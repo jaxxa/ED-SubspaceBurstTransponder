@@ -16,9 +16,9 @@ namespace SubspaceBurstTransponder
 
         private static Texture2D UI_CALL;
 
-        private const int MAX_POWER = 1000;
+        private const int MAX_POWER = 500;
         private const int CHARGE_RATE = 1;
-        private const int DISCHARGE_RATE = 2;
+        private const int DISCHARGE_RATE = 10;
 
         private int m_CurrentChargeLevel = 0;
 
@@ -74,11 +74,11 @@ namespace SubspaceBurstTransponder
 
                 if (DebugSettings.unlimitedPower)
                 {
-                    this.m_CurrentChargeLevel -= Building_SubspaceBurstTransponder.CHARGE_RATE * 20;
+                    this.m_CurrentChargeLevel -= Building_SubspaceBurstTransponder.DISCHARGE_RATE * 20;
                 }
                 else
                 {
-                    this.m_CurrentChargeLevel -= Building_SubspaceBurstTransponder.CHARGE_RATE;
+                    this.m_CurrentChargeLevel -= Building_SubspaceBurstTransponder.DISCHARGE_RATE;
                 }
 
 
@@ -143,6 +143,7 @@ namespace SubspaceBurstTransponder
             if (this.m_Mode == enumTransponderMode.Charged)
             {
                 this.m_Mode = enumTransponderMode.Transmitting;
+                this.m_CurrentChargeLevel = Building_SubspaceBurstTransponder.MAX_POWER - Building_SubspaceBurstTransponder.DISCHARGE_RATE;
             }
             else
             {
