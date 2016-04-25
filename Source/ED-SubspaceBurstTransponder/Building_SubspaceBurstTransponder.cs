@@ -85,7 +85,7 @@ namespace SubspaceBurstTransponder
                 if (this.m_CurrentChargeLevel <= 0)
                 {
                     this.m_CurrentChargeLevel = 0;
-                    this.m_Mode = enumTransponderMode.Charged;
+                    this.m_Mode = enumTransponderMode.Charging;
 
                     this.SummonTradeShip();
                 }
