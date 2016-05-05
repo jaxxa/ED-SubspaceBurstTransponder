@@ -1,4 +1,0 @@
-C:\Git\Jaxxa-Rimworld\Mods\ED-SubspaceBurstTransponder\Assemblies\SubspaceBurstTransponder.dll
-C:\Git\Jaxxa-Rimworld\Mods\ED-SubspaceBurstTransponder\Source\ED-SubspaceBurstTransponder\obj\Debug\SubspaceBurstTransponder.dll
-C:\Git\Jaxxa-Rimworld\~SubModules\ED-SubspaceBurstTransponder\Assemblies\SubspaceBurstTransponder.dll
-C:\Git\Jaxxa-Rimworld\~SubModules\ED-SubspaceBurstTransponder\Source\ED-SubspaceBurstTransponder\obj\Debug\SubspaceBurstTransponder.dll

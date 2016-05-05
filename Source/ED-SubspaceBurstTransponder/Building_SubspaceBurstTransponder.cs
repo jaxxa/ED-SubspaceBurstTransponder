@@ -16,7 +16,7 @@ namespace SubspaceBurstTransponder
 
         private static Texture2D UI_CALL;
 
-        private const int MAX_POWER = 100;
+        private const int MAX_POWER = 500;
         private const int CHARGE_RATE = 1;
         private const int DISCHARGE_RATE = 2;
 
@@ -126,7 +126,14 @@ namespace SubspaceBurstTransponder
         {
             if (this.m_Mode == enumTransponderMode.Charged)
             {
-                this.m_Mode = enumTransponderMode.Transmitting;
+                if (this.CanTransmit())
+                {
+                    this.m_Mode = enumTransponderMode.Transmitting;
+                }
+                else
+                {
+                    Messages.Message("Only One Transponder Can Transmit at a Time.", MessageSound.Negative);
+                }
             }
             else
             {
@@ -152,6 +159,28 @@ namespace SubspaceBurstTransponder
             IncidentParms _Params = new IncidentParms();
             _Params.forced = true;
             _DefOrbitalTraderArrival.Worker.TryExecute(_Params);
+        }
+
+
+        public bool CanTransmit()
+        {
+            IEnumerable<Building> _SubspaceBurstTransponderBuildings = Find.ListerBuildings.allBuildingsColonist.Where<Building>(t => t.def.defName == "Buildings_SubspaceBurstTransponder");
+
+            if (_SubspaceBurstTransponderBuildings != null)
+            {
+                //List<Thing> fireTo
+                foreach (Building_SubspaceBurstTransponder _currentBuilding in _SubspaceBurstTransponderBuildings.ToList())
+                {
+                    if (_currentBuilding != this)
+                    {
+                        if (_currentBuilding.m_Mode == enumTransponderMode.Transmitting)
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+            return true;
         }
 
     }
