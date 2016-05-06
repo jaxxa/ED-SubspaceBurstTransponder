@@ -1,4 +1,4 @@
-# ED-SubspaceBurstTransponder
+# ED-SubspaceTransponder
 
 #Change Log
 
@@ -6,4 +6,5 @@
 *Initial Release
 
 01.00.01
-*Limited Number of Active Transponders and increased transmission Time.
+*Fixing issue with charge / discharge.
+
