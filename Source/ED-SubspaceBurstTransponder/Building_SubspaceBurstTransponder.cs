@@ -9,6 +9,7 @@ using Verse;
 
 namespace SubspaceBurstTransponder
 {
+    [StaticConstructorOnStartup]
     class Building_SubspaceBurstTransponder : Building
     {
 

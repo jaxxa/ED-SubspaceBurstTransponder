@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
 	<name>ED-SubspaceTransponder</name>
+	<targetVersion>0.14.1230</targetVersion>
 	<author>Jaxxa</author>
-	<url>https://ludeon.com/forums/index.php?topic=15606.0</url>
+	<url>https://ludeon.com/forums/index.php?topic=18995.0</url>
 	<description>
 	Allows creation of a Device for contacting passing ships at a distance and guiding them to your colony.
 	</description>
