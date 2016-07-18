@@ -16,7 +16,7 @@
 		<defName>Buildings_SubspaceBurstTransponder</defName>
 		<label>Subspace Burst Transponder</label>
 		<description>Contacts Ships at a distance and guides them to your colony.</description>
-		<thingClass>SubspaceBurstTransponder.Building_SubspaceBurstTransponder</thingClass>
+		<thingClass>EnhancedDevelopment.SubspaceBurstTransponder.Building_SubspaceBurstTransponder</thingClass>
 		<graphicData>
 			<texPath>OrbitalCommand</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

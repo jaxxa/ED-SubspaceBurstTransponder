@@ -7,7 +7,7 @@ using UnityEngine;
 using RimWorld;
 using Verse;
 
-namespace SubspaceBurstTransponder
+namespace EnhancedDevelopment.SubspaceBurstTransponder
 {
     [StaticConstructorOnStartup]
     class Building_SubspaceBurstTransponder : Building
