@@ -4,7 +4,14 @@
 	<targetVersion>0.14.1234</targetVersion>
 	<author>Jaxxa</author>
 	<url>https://ludeon.com/forums/index.php?topic=18995.0</url>
-	<description>
-	Allows creation of a Device for contacting passing ships at a distance and guiding them to your colony.
+	<description>Version: 02.00.01
+Discussion, Non Steam Downloads and GitHub Repositories of this mod is available at: https://ludeon.com/forums/index.php?topic=18995
+Please Use that Thread for Discussion / Feedback that would like me to reply to. 
+Ideally Bugs should be logged on GitHub although in the discussion thread is also fine.
+
+Allows creation of a Device for contacting passing ships at a distance and guiding them to your colony.
+
+First it must be charged, after the charging has been completed you can set it to entre a transition mode. After transition has been completed a trade ship will arrive in orbit, and the device will enter charge mode again.
+Only one device can be transmitting at any one time.
 	</description>
 </ModMetaData>

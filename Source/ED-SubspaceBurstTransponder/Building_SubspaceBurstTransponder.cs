@@ -25,11 +25,15 @@ namespace EnhancedDevelopment.SubspaceBurstTransponder
 
         private enumTransponderMode m_Mode = enumTransponderMode.Charging;
 
+        static Building_SubspaceBurstTransponder()
+        {
+            Building_SubspaceBurstTransponder.UI_CALL = ContentFinder<Texture2D>.Get("CallShip", true);
+        }
+
         public override void SpawnSetup()
         {
             base.SpawnSetup();
 
-            Building_SubspaceBurstTransponder.UI_CALL = ContentFinder<Texture2D>.Get("CallShip", true);
             this.m_Power = base.GetComp<CompPowerTrader>();
         }
 
