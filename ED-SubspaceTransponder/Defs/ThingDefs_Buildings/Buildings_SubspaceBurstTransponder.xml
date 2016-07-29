@@ -15,12 +15,12 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>Buildings_SubspaceBurstTransponder</defName>
 		<label>Subspace Burst Transponder</label>
-		<description>Contacts Ships at a distance and guides them to your colony.</description>
+		<description>Contacts Ships or Caravans at a distance and guides them to your colony, allowing you to trade with them.</description>
 		<thingClass>EnhancedDevelopment.SubspaceBurstTransponder.Building_SubspaceBurstTransponder</thingClass>
 		<graphicData>
-			<texPath>OrbitalCommand</texPath>
+			<texPath>TransponderConsole</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(3,3)</drawSize>
+      <drawSize>(5,5)</drawSize>
 			<damageData>
 				<rect>(0.02,0.25,2.96,2.85)</rect>
 				<cornerTL>Damage/Corner</cornerTL>
@@ -57,7 +57,7 @@
 		</costList>
 		<socialPropernessMatters>true</socialPropernessMatters>
 		<interactionCellOffset>(0,0,2)</interactionCellOffset>
-		<hasInteractionCell>true</hasInteractionCell>
+		<hasInteractionCell>false</hasInteractionCell>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<designationCategory>Misc</designationCategory>
 		<constructEffect>ConstructMetal</constructEffect>

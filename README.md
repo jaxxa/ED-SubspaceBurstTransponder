@@ -16,3 +16,7 @@
 
 02.00.01
 *Fix for potentially not loading Graphical Resources on loading a saved game.
+
+02.00.02
+*Allows Calling of Trade Caravans
+*New Textures

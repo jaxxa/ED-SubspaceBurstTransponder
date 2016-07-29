@@ -9,9 +9,12 @@ Discussion, Non Steam Downloads and GitHub Repositories of this mod is available
 Please Use that Thread for Discussion / Feedback that would like me to reply to. 
 Ideally Bugs should be logged on GitHub although in the discussion thread is also fine.
 
-Allows creation of a Device for contacting passing ships at a distance and guiding them to your colony.
+Contacts Ships or Caravans at a distance and guides them to your colony, allowing you to trade with them.
 
-First it must be charged, after the charging has been completed you can set it to entre a transition mode. After transition has been completed a trade ship will arrive in orbit, and the device will enter charge mode again.
-Only one device can be transmitting at any one time.
+First the "Subspace Burst Transponder" Must be built, it will then enter a charging mode. Once it is fully charged you can press the Call Button to have it Enter Transmittion Mode. After transition has been completed a Trader will arrive and the device will enter charge mode again.
+
+There are two modes, one for contacting ships and the other for contacting ground caravans. 
+Only one device can be transmitting at any one time on each mode. 
+Transmission is twice as fast and charging, for the highest number of traders you can have one device transmitting while two are charging for each mode.
 	</description>
 </ModMetaData>
