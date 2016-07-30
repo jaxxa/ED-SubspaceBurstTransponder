@@ -16,6 +16,7 @@ namespace EnhancedDevelopment.SubspaceBurstTransponder
         CompPowerTrader m_Power;
 
         private static Texture2D UI_CALL;
+        private static Texture2D UI_CALL_DISABLED;
         private static Texture2D UI_SHIP;
         private static Texture2D UI_CARAVAN;
 
@@ -33,6 +34,7 @@ namespace EnhancedDevelopment.SubspaceBurstTransponder
         static Building_SubspaceBurstTransponder()
         {
             Building_SubspaceBurstTransponder.UI_CALL = ContentFinder<Texture2D>.Get("Call", true);
+            Building_SubspaceBurstTransponder.UI_CALL_DISABLED = ContentFinder<Texture2D>.Get("CallDisabled", true);
             Building_SubspaceBurstTransponder.UI_SHIP = ContentFinder<Texture2D>.Get("Ship", true);
             Building_SubspaceBurstTransponder.UI_CARAVAN = ContentFinder<Texture2D>.Get("Caravan", true);
         }
@@ -133,7 +135,16 @@ namespace EnhancedDevelopment.SubspaceBurstTransponder
                 Command_Action act = new Command_Action();
                 //act.action = () => Designator_Deconstruct.DesignateDeconstruct(this);
                 act.action = () => this.StartTransmit();
-                act.icon = Building_SubspaceBurstTransponder.UI_CALL;
+
+                if (this.m_Status == enumTransponderStatus.Charged)
+                {
+                    act.icon = Building_SubspaceBurstTransponder.UI_CALL;
+                }
+                else
+                {
+                    act.icon = Building_SubspaceBurstTransponder.UI_CALL_DISABLED;
+                }
+
                 act.defaultLabel = "Call";
                 act.defaultDesc = "Call";
                 act.activateSound = SoundDef.Named("Click");
