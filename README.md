@@ -20,3 +20,7 @@
 02.00.02
 *Allows Calling of Trade Caravans
 *New Textures
+
+03.00.00
+*Update - Alpha 15
+*Adding AutoCall

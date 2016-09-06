@@ -29,6 +29,7 @@ namespace EnhancedDevelopment.SubspaceBurstTransponder
 
         private enumTransponderStatus m_Status = enumTransponderStatus.Charging;
         private emumTransponderMode m_Mode = emumTransponderMode.OrbitalTrader;
+        private bool m_AutoCall = false;
 
         //Constructor
         static Building_SubspaceBurstTransponder()
@@ -71,12 +72,26 @@ namespace EnhancedDevelopment.SubspaceBurstTransponder
             Scribe_Values.LookValue(ref m_CurrentChargeLevel, "m_CurrentChargeLevel");
             Scribe_Values.LookValue(ref m_Status, "m_Status");
             Scribe_Values.LookValue(ref m_Mode, "m_Mode");
-
+            Scribe_Values.LookValue(ref m_AutoCall, "m_AutoCall");
         }
 
         public override void TickRare()
         {
             base.TickRare();
+
+            //switch (this.m_Status)
+            //{
+            //    case enumTransponderStatus.Charging:
+            //        {
+            //            break;
+            //        }
+
+            //    default:
+            //        {
+            //            break;
+            //        }
+            //}
+
 
             if (this.m_Status == enumTransponderStatus.Charging)
             {
@@ -95,6 +110,10 @@ namespace EnhancedDevelopment.SubspaceBurstTransponder
                     {
                         this.m_CurrentChargeLevel = this.CurrentMaxChargeLevel;
                         this.m_Status = enumTransponderStatus.Charged;
+                        if (this.m_AutoCall)
+                        {
+                            this.StartTransmit();
+                        }
                     }
                 }
             }
@@ -145,8 +164,17 @@ namespace EnhancedDevelopment.SubspaceBurstTransponder
                     act.icon = Building_SubspaceBurstTransponder.UI_CALL_DISABLED;
                 }
 
-                act.defaultLabel = "Call";
-                act.defaultDesc = "Call";
+                if (this.m_AutoCall)
+                {
+                    act.defaultLabel = "Call - Auto";
+                    act.defaultDesc = "Call - Auto";
+
+                }
+                else
+                {
+                    act.defaultLabel = "Call";
+                    act.defaultDesc = "Call";
+                }
                 act.activateSound = SoundDef.Named("Click");
                 //act.hotKey = KeyBindingDefOf.DesignatorDeconstruct;
                 //act.groupKey = 689736;
@@ -229,8 +257,18 @@ namespace EnhancedDevelopment.SubspaceBurstTransponder
             else
             {
                 Messages.Message("Insufficient Charge Level to Contact Ship.", MessageSound.RejectInput);
+                if (this.m_AutoCall)
+                {
+                    this.m_AutoCall = false;
+                }
+                else
+                {
+                    this.m_AutoCall = true;
+                }
+
             }
         }
+
         public void SummonTrader()
         {
             //QueuedIncident _Temp = new QueuedIncident();
@@ -260,6 +298,7 @@ namespace EnhancedDevelopment.SubspaceBurstTransponder
                 _DefOrbitalTraderArrival.Worker.TryExecute(_Params);
             }
         }
+
         public void SwitchMode()
         {
             this.m_Status = enumTransponderStatus.Charging;
